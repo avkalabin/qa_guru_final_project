@@ -10,7 +10,7 @@ public class CookieAuth {
 
     final static public String PROJECT_ID = "2264",
             X_XSRF_TOKEN = 	"bad77706-785a-4b26-bb17-224843544438",
-            ALLURE_TESTOPS_SESSION = "d29af143-7028-4d35-a7c6-909765b221de";
+            ALLURE_TESTOPS_SESSION = "ca223106-eeb6-4c2a-abfe-c91740405b46";
 
     public CookieAuth authWithCookie() {
         open("/favicon.ico");
