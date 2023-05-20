@@ -1,6 +1,7 @@
 package web.testops.tests;
 
-import config.WebDriverConfig;
+import org.junit.jupiter.api.DisplayName;
+import web.testops.config.WebDriverConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
 import web.testops.pages.LoginPage;
@@ -11,6 +12,7 @@ public class LoginTests extends TestBase {
     LoginPage loginPage = new LoginPage();
     WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
 
+    @DisplayName("Проверка авторизации пользователя")
     @Test
     void loginTest() {
 

@@ -1,4 +1,4 @@
-package config;
+package web.testops.config;
 
 import org.aeonbits.owner.Config;
 

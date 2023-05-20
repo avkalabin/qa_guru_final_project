@@ -1,4 +1,4 @@
-package web.testops.tests;
+package web.testops.helpers;
 
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.DisplayName;
@@ -18,10 +18,10 @@ public class TestCaseManager {
     public static CreateTestCaseResponse createTestCaseResponse;
     Integer testCaseId;
     Faker faker = new Faker();
-    String testCaseName = faker.name().fullName();
+    public String testCaseName = faker.name().fullName();
 
     @DisplayName("Создание тест-кейса")
-    void createTestCase() {
+    public void createTestCase() {
 
         CreateTestCaseBody createTestCaseBody = new CreateTestCaseBody();
         createTestCaseBody.setName(testCaseName);
@@ -37,7 +37,7 @@ public class TestCaseManager {
     }
 
     @DisplayName("Добавление шагов в тест-кейс")
-    void addSteps() {
+    public void addSteps() {
 
         CreateStepBody.Steps step1 = new CreateStepBody.Steps();
         step1.setName("Step 1");
@@ -65,7 +65,7 @@ public class TestCaseManager {
 
 
     @DisplayName("Удаление тест-кейса")
-    void deleteTestCase() {
+    public void deleteTestCase() {
 
         DeleteStepCaseBody deleteStepCaseBody = new DeleteStepCaseBody();
         DeleteStepCaseBody.Selection selection = new DeleteStepCaseBody.Selection();

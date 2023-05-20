@@ -1,8 +1,9 @@
 package web.testops.tests;
 
-import helpers.CookieAuth;
+import web.testops.helpers.CookieAuth;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import web.testops.helpers.TestCaseManager;
 import web.testops.pages.TestCasesPage;
 
 import static io.qameta.allure.Allure.step;
@@ -20,7 +21,8 @@ public class TestCasesTests extends TestBase {
         testCaseManager.createTestCase();
         testCaseManager.addSteps();
 
-        step("Авторизация", () -> cookieAuth.authWithCookie());
+        step("Авторизация", () -> cookieAuth.authWithCookie()
+                .openTestCaseUrl());
 
         step("Проверка имени созданного тест-кейса", () -> {
 
@@ -37,7 +39,8 @@ public class TestCasesTests extends TestBase {
         testCaseManager.createTestCase();
         testCaseManager.addSteps();
 
-        step("Авторизация", () -> cookieAuth.authWithCookie());
+        step("Авторизация", () -> cookieAuth.authWithCookie()
+                .openTestCaseUrl());
 
         step("Редактирование имени тест-кейса", () -> {
 
@@ -62,7 +65,8 @@ public class TestCasesTests extends TestBase {
         testCaseManager.createTestCase();
         testCaseManager.addSteps();
 
-        step("Авторизация", () -> cookieAuth.authWithCookie());
+        step("Авторизация", () -> cookieAuth.authWithCookie()
+                .openTestCaseUrl());
 
         step("Проверка создания шагов тест-кейса", () -> {
 
@@ -80,7 +84,8 @@ public class TestCasesTests extends TestBase {
         testCaseManager.createTestCase();
         testCaseManager.addSteps();
 
-        step("Авторизация", () -> cookieAuth.authWithCookie());
+        step("Авторизация", () -> cookieAuth.authWithCookie()
+                .openTestCaseUrl());
 
         step("Добавление аттача", () -> {
 

@@ -1,7 +1,7 @@
 package web.testops.tests;
 
 import com.codeborne.selenide.Configuration;
-import helpers.Attach;
+import web.testops.helpers.Attach;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,8 +18,8 @@ public class TestBase {
         RestAssured.baseURI = System.getProperty("api_uri", "https://allure.autotests.cloud");
 
         Configuration.baseUrl = System.getProperty("base_url", "https://allure.autotests.cloud");
-        Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid_url", "selenoid.autotests.cloud/wd/hub");
-        Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
+      //  Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid_url", "selenoid.autotests.cloud/wd/hub");
+        Configuration.browserSize = System.getProperty("browser_size", "1920x800");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browser_version", "100.0");
 
