@@ -13,27 +13,17 @@ import java.util.Map;
 
 public class TestBase {
 
-    static WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
 
     @BeforeAll
     static void setUp() {
 
-        RestAssured.baseURI = webDriverConfig.getBaseUri();
-
-        Configuration.baseUrl = webDriverConfig.getBaseUrl();
-        Configuration.remote = webDriverConfig.getRemoteUrl();
-        Configuration.browserSize = webDriverConfig.getBrowserSize();
-        Configuration.browser = webDriverConfig.getBrowser();
-        Configuration.browserVersion = webDriverConfig.getBrowserVersion();
-
-        /*RestAssured.baseURI = System.getProperty("api_uri", "https://allure.autotests.cloud");
-
+        RestAssured.baseURI = System.getProperty("api_uri", "https://allure.autotests.cloud");
 
         Configuration.baseUrl = System.getProperty("base_url", "https://allure.autotests.cloud");
         Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid_url", "selenoid.autotests.cloud/wd/hub");
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browser_version", "100.0");*/
+        Configuration.browserVersion = System.getProperty("browser_version", "100.0");
 
         Configuration.pageLoadStrategy = "eager";
 
