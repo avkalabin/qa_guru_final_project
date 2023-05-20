@@ -64,3 +64,4 @@ public class TestCasesPage {
         SCENARIO_SECTION.shouldHave(text(attachedText));
     }
 }
+

@@ -8,13 +8,15 @@ import java.util.List;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CreateStepBody {
+
     private List<Steps> steps;
 
     @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Steps {
-        String name, spacing;
-        Integer workPath;
+
+        private String name, spacing;
+        private Integer workPath;
 
     }
 

@@ -5,8 +5,8 @@ import lombok.Data;
 @Data
 public class CreateTestCaseResponse {
 
-    Integer id;
-    String name, statusName, statusColor;
-    Boolean automated, external;
-    Long createdDate;
+    private Integer id;
+    private String name, statusName, statusColor;
+    private Boolean automated, external;
+    private Long createdDate;
 }

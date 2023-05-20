@@ -15,10 +15,6 @@ import static web.testops.specs.Spec.responseSpec;
 
 public class TestCaseManager {
 
-    final static public String PROJECT_ID = "2264",
-            X_XSRF_TOKEN = 	"95d9870b-d739-4d36-8a32-44a4a332e997",
-            ALLURE_TESTOPS_SESSION = "5cfc68ab-f3de-404d-914c-dca53e427c09";
-
     public static CreateTestCaseResponse createTestCaseResponse;
     Integer testCaseId;
     Faker faker = new Faker();
@@ -66,6 +62,7 @@ public class TestCaseManager {
                 .spec(responseSpec)
                 .extract().as(CreateStepResponse.class));
     }
+
 
     @DisplayName("Удаление тест-кейса")
     void deleteTestCase() {

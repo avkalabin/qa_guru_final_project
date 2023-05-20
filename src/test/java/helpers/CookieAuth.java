@@ -6,10 +6,12 @@ import web.testops.tests.TestCaseManager;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static java.lang.String.format;
-import static web.testops.tests.TestCaseManager.ALLURE_TESTOPS_SESSION;
-import static web.testops.tests.TestCaseManager.PROJECT_ID;
 
 public class CookieAuth {
+
+    final static public String PROJECT_ID = "2264",
+            X_XSRF_TOKEN = 	"2e28340e-93b0-4e67-9274-8aef859400a3",
+            ALLURE_TESTOPS_SESSION = "9afed535-340a-408e-aeab-cc8e36137766";
 
     public void authWithCookie() {
         open("/favicon.ico");

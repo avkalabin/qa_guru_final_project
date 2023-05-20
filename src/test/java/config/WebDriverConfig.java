@@ -4,7 +4,9 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:${env}.properties"
+        "classpath:${env}.properties",
+        "classpath:credentials.properties"
+
 })
 
 public interface WebDriverConfig extends Config {
@@ -31,5 +33,8 @@ public interface WebDriverConfig extends Config {
 
     @Key("remoteUrl")
     String getRemoteUrl();
+
+    String username();
+    String password();
 
 }
