@@ -23,8 +23,7 @@ public class LoginTests extends TestBase {
 
         step("Нажимаем кнопку \"Continue\"", () -> {
 
-            loginPage.openLoginPage()
-                    .clickSubmitButton();
+            loginPage.clickSubmitButton();
         });
 
         step("Проверяем, что открылась главная страница с Projects", () -> {
