@@ -21,20 +21,23 @@ public class LoginPage {
     }
 
     public LoginPage setUsername(String username) {
+
         USERNAME.setValue(username);
         return this;
     }
 
-    public LoginPage setPassword(String password) {
+    public void setPassword(String password) {
+
         PASSWORD.setValue(password);
-        return this;
     }
 
     public void clickSubmitButton() {
+
         SUBMIT_BUTTON.click();
     }
 
     public void verifyMainPageHaveText(String text) {
+
         MAIN_PAGE_LAYOUT.shouldHave(text(text));
     }
 }

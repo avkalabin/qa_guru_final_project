@@ -14,15 +14,21 @@ public class LoginTests extends TestBase {
     @Test
     void loginTest() {
 
-        step("Authorize", () -> {
+        step("Вводим имя пользователя и пароль", () -> {
 
             loginPage.openLoginPage()
                     .setUsername(webDriverConfig.username())
-                    .setPassword(webDriverConfig.password())
+                    .setPassword(webDriverConfig.password());
+        });
+
+        step("Нажимаем кнопку \"Continue\"", () -> {
+
+            loginPage.openLoginPage()
                     .clickSubmitButton();
         });
 
-        step("Verify authorization success", () -> {
+        step("Проверяем, что открылась главная страница с Projects", () -> {
+
             loginPage.verifyMainPageHaveText("Projects");
         });
     }
