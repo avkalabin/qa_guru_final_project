@@ -21,7 +21,7 @@ public class TestCasesPage {
             ATTACH_TEXT_BUTTON = $(byTagAndText("span", "Attach text")),
             ATTACH_TEXT_TEXTAREA = $(".FormLabel [name = 'content']"),
             ADD_ATTACH_SUBMIT_BUTTON = $(".Form__controls:nth-child(3) .Button_style_primary > span"),
-            EDIT_SCENARIO_SUBMIT_BUTTON = $(".Editable Button[type = 'submit']"),
+            EDIT_SCENARIO_SUBMIT_BUTTON = $(".Editable button[type = 'submit']"),
             SCENARIO_SECTION = $(".Scenario");
 
     private final ElementsCollection TESTCASE_SCENARIO = $$(".Editable");
