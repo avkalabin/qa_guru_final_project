@@ -20,7 +20,7 @@ public class TestPlansPage {
             TEST_PLANS_HEADER = $(".TestPlanHeader"),
             TEST_PLAN_MENU = $(".Menu__trigger"),
             TEST_PLAN_MENU_DELETE = $(".Menu__item_danger").$(byTagAndText("span", "Delete")),
-            DELETE_TEST_PLAN_BUTTON = $(".Menu__item_danger").$(byTagAndText("span", "Delete")),
+            DELETE_TEST_PLAN_BUTTON = $(".Button_style_danger").$(byTagAndText("span", "Delete")),
             TEST_PLAN_COLUMN = $(".ColumnHeaders");
 
     String testPlansUrl = format("/project/%s/testplans", PROJECT_ID);
