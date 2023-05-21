@@ -41,7 +41,6 @@ public class TestCaseManager {
 
         CreateStepBody.Steps step1 = new CreateStepBody.Steps();
         step1.setName("Step 1");
-
         CreateStepBody.Steps step2 = new CreateStepBody.Steps();
         step2.setName("Step 2");
 
@@ -63,7 +62,6 @@ public class TestCaseManager {
                 .extract().as(CreateStepResponse.class));
     }
 
-
     @DisplayName("Удаление тест-кейса")
     public void deleteTestCase() {
 
@@ -84,4 +82,5 @@ public class TestCaseManager {
                 .log().body()
                 .statusCode(204));
     }
+
 }

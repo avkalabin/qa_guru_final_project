@@ -9,6 +9,7 @@ import web.testops.pages.TestCasesPage;
 import static io.qameta.allure.Allure.step;
 
 public class TestCasesTests extends TestBase {
+
     TestCaseManager testCaseManager = new TestCaseManager();
     TestCasesPage testCasesPage = new TestCasesPage();
     CookieAuth cookieAuth = new CookieAuth();
@@ -17,7 +18,6 @@ public class TestCasesTests extends TestBase {
     @DisplayName("Проверка имени созданного тест-кейса")
     @Test
     void verifyCreationTestCaseTest() {
-
         testCaseManager.createTestCase();
         testCaseManager.addSteps();
 
@@ -25,7 +25,6 @@ public class TestCasesTests extends TestBase {
                 .openTestCaseUrl());
 
         step("Проверка имени созданного тест-кейса", () -> {
-
             testCasesPage.verifyTestCaseName(testCaseManager.testCaseName);
         });
 
@@ -35,7 +34,6 @@ public class TestCasesTests extends TestBase {
     @DisplayName("Проверка редактирования имени тест-кейса")
     @Test
     void editTestCaseTest() {
-
         testCaseManager.createTestCase();
         testCaseManager.addSteps();
 
@@ -43,14 +41,12 @@ public class TestCasesTests extends TestBase {
                 .openTestCaseUrl());
 
         step("Редактирование имени тест-кейса", () -> {
-
             testCasesPage.verifyTestCaseName(testCaseManager.testCaseName)
                     .clickRenameTestCase()
                     .editTestCaseName();
         });
 
         step("Проверка имени отредактированного тест-кейса", () -> {
-
             testCasesPage.verifyTestCaseName(testCaseManager.testCaseName + " edited");
         });
 
@@ -61,7 +57,6 @@ public class TestCasesTests extends TestBase {
     @DisplayName("Проверка создания шагов тест-кейса")
     @Test
     void verifyCreationStepsTest() {
-
         testCaseManager.createTestCase();
         testCaseManager.addSteps();
 
@@ -69,7 +64,6 @@ public class TestCasesTests extends TestBase {
                 .openTestCaseUrl());
 
         step("Проверка создания шагов тест-кейса", () -> {
-
             testCasesPage.verifyStepsCreation();
         });
 
@@ -80,7 +74,6 @@ public class TestCasesTests extends TestBase {
     @DisplayName("Проверка добавления аттача к шагам")
     @Test
     void editStepsAttachTest() {
-
         testCaseManager.createTestCase();
         testCaseManager.addSteps();
 
@@ -88,19 +81,16 @@ public class TestCasesTests extends TestBase {
                 .openTestCaseUrl());
 
         step("Добавление аттача", () -> {
-
             testCasesPage.verifyTestCaseName(testCaseManager.testCaseName)
                     .editStepsMenuClick()
                     .attachTextToStep("Attached text");
         });
 
         step("Проверка добавленного аттача", () -> {
-
             testCasesPage.verifyAddedAttach("Attached text");
         });
 
         testCaseManager.deleteTestCase();
     }
-
 
 }

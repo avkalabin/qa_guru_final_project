@@ -15,29 +15,25 @@ public class LoginPage {
             MAIN_PAGE_LAYOUT = $(".BasicLayout");
 
     public LoginPage openLoginPage() {
-
         open("/login");
         return this;
     }
 
     public LoginPage setUsername(String username) {
-
         USERNAME.setValue(username);
         return this;
     }
 
     public void setPassword(String password) {
-
         PASSWORD.setValue(password);
     }
 
     public void clickSubmitButton() {
-
         SUBMIT_BUTTON.click();
     }
 
     public void verifyMainPageHaveText(String text) {
-
         MAIN_PAGE_LAYOUT.shouldHave(text(text));
     }
+
 }

@@ -51,7 +51,6 @@ public class TestCasesPage {
         STEP_EDIT_ACTIONS_BUTTON.click();
         ATTACH_TEXT_BUTTON.click();
         return this;
-
     }
 
     public void attachTextToStep(String attachedText) {
@@ -63,5 +62,6 @@ public class TestCasesPage {
     public void verifyAddedAttach(String attachedText) {
         SCENARIO_SECTION.shouldHave(text(attachedText));
     }
+
 }
 

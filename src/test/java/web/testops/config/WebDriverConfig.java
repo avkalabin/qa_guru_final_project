@@ -10,4 +10,5 @@ public interface WebDriverConfig extends Config {
 
     String username();
     String password();
+
 }

@@ -3,6 +3,7 @@ package web.testops.helpers;
 import io.qameta.allure.restassured.AllureRestAssured;
 
 public class CustomAllureListener {
+
     private static final AllureRestAssured FILTER = new AllureRestAssured();
 
     public static AllureRestAssured withCustomTemplates() {
@@ -10,4 +11,5 @@ public class CustomAllureListener {
         FILTER.setResponseTemplate("response.ftl");
         return FILTER;
     }
+
 }

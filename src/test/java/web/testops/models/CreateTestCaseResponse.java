@@ -9,4 +9,5 @@ public class CreateTestCaseResponse {
     private String name, statusName, statusColor;
     private Boolean automated, external;
     private Long createdDate;
+
 }

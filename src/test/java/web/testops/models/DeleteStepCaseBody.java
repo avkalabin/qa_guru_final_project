@@ -18,5 +18,7 @@ public class DeleteStepCaseBody {
         private String kind;
         private int projectId;
         private String[] path;
+
     }
+
 }
