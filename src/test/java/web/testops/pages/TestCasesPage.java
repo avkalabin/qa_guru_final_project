@@ -37,8 +37,8 @@ public class TestCasesPage {
         return this;
     }
 
-    public void editTestCaseName() {
-        TESTCASE_NAME_INPUT.setValue(" edited");
+    public void editTestCaseName(String text) {
+        TESTCASE_NAME_INPUT.setValue(text);
         RENAME_TESTCASE_SUBMIT_BUTTON.click();
     }
 

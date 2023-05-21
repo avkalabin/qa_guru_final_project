@@ -1,6 +1,5 @@
 package web.testops.helpers;
 
-import com.github.javafaker.Faker;
 import org.junit.jupiter.api.DisplayName;
 import web.testops.models.*;
 
@@ -17,11 +16,9 @@ public class TestCaseManager {
 
     public static CreateTestCaseResponse createTestCaseResponse;
     Integer testCaseId;
-    Faker faker = new Faker();
-    public String testCaseName = faker.name().fullName();
 
     @DisplayName("Создание тест-кейса")
-    public void createTestCase() {
+    public void createTestCase(String testCaseName) {
 
         CreateTestCaseBody createTestCaseBody = new CreateTestCaseBody();
         createTestCaseBody.setName(testCaseName);
@@ -33,7 +30,6 @@ public class TestCaseManager {
                 .then()
                 .spec(responseSpec)
                 .extract().as(CreateTestCaseResponse.class));
-
     }
 
     @DisplayName("Добавление шагов в тест-кейс")
