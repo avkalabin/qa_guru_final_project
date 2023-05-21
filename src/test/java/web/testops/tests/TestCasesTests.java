@@ -1,5 +1,7 @@
 package web.testops.tests;
 
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import web.testops.helpers.CookieAuth;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -72,8 +74,9 @@ public class TestCasesTests extends TestBase {
     }
 
     @DisplayName("Проверка добавления аттача к шагам")
-    @Test
-    void editStepsAttachTest() {
+    @ValueSource(strings = {"Attached First", "Attached Second"})
+    @ParameterizedTest(name = "{0}")
+    void editStepsAttachTest(String attached) {
         testCaseManager.createTestCase();
         testCaseManager.addSteps();
 
@@ -83,11 +86,11 @@ public class TestCasesTests extends TestBase {
         step("Добавление аттача", () -> {
             testCasesPage.verifyTestCaseName(testCaseManager.testCaseName)
                     .editStepsMenuClick()
-                    .attachTextToStep("Attached text");
+                    .attachTextToStep(attached);
         });
 
         step("Проверка добавленного аттача", () -> {
-            testCasesPage.verifyAddedAttach("Attached text");
+            testCasesPage.verifyAddedAttach(attached);
         });
 
         testCaseManager.deleteTestCase();
