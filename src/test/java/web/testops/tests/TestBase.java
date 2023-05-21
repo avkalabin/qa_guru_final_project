@@ -9,6 +9,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
+import static com.codeborne.selenide.Selenide.clearBrowserCookies;
+import static com.codeborne.selenide.Selenide.clearBrowserLocalStorage;
+import static io.qameta.allure.Allure.step;
+
 public class TestBase {
 
     @BeforeAll
@@ -36,6 +40,10 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLog();
         Attach.addVideo();
+        step("Очищаем cookies", () -> {
+            clearBrowserCookies();
+            clearBrowserLocalStorage();
+        });
     }
 
 }
