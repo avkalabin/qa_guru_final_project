@@ -1,6 +1,8 @@
 package web.testops.tests;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import web.testops.config.WebDriverConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
@@ -8,6 +10,10 @@ import web.testops.pages.LoginPage;
 
 import static io.qameta.allure.Allure.step;
 
+@Owner("avkalabin")
+@Feature("UI тесты allure.autotests.cloud")
+@Story("Авторизация пользователя")
+@Tag("web")
 public class LoginTests extends TestBase {
 
     LoginPage loginPage = new LoginPage();
@@ -15,6 +21,7 @@ public class LoginTests extends TestBase {
 
     @DisplayName("Проверка авторизации пользователя")
     @Test
+    @Severity(SeverityLevel.BLOCKER)
     void loginTest() {
 
         step("Вводим имя пользователя и пароль", () -> {

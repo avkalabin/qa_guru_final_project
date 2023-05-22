@@ -1,17 +1,20 @@
 package web.testops.tests;
 
 import com.github.javafaker.Faker;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer.*;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
 import web.testops.helpers.CookieAuth;
 import web.testops.pages.TestPlansPage;
 
 import static io.qameta.allure.Allure.step;
 
 @TestMethodOrder(OrderAnnotation.class)
+@Owner("avkalabin")
+@Feature("UI тесты allure.autotests.cloud")
+@Story("Работа с тест кейсами")
+@Tag("web")
 public class TestPlansTests extends TestBase {
 
     CookieAuth cookieAuth = new CookieAuth();
@@ -22,6 +25,7 @@ public class TestPlansTests extends TestBase {
     @Order(1)
     @DisplayName("Проверка создания тест плана")
     @Test
+    @Severity(SeverityLevel.MINOR)
     void createTestPlan() {
 
         step("Авторизация", () -> cookieAuth.authWithCookie());
@@ -45,6 +49,7 @@ public class TestPlansTests extends TestBase {
     @Order(2)
     @DisplayName("Проверка удаления тест плана")
     @Test
+    @Severity(SeverityLevel.MINOR)
     void deleteTestPlan() {
 
         step("Авторизация", () -> cookieAuth.authWithCookie());

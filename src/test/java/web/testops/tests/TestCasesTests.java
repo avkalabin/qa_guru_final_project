@@ -1,5 +1,7 @@
 package web.testops.tests;
 
+import io.qameta.allure.*;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -12,6 +14,10 @@ import web.testops.pages.TestCasesPage;
 import static io.qameta.allure.Allure.step;
 import static web.testops.helpers.TestCaseLifecycleExtension.testCaseName;
 
+@Owner("avkalabin")
+@Feature("UI тесты allure.autotests.cloud")
+@Story("Работа с тест кейсами")
+@Tag("web")
 @ExtendWith(TestCaseLifecycleExtension.class)
 public class TestCasesTests extends TestBase {
 
@@ -20,6 +26,7 @@ public class TestCasesTests extends TestBase {
 
     @DisplayName("Проверка имени созданного тест-кейса")
     @Test
+    @Severity(SeverityLevel.CRITICAL)
     void verifyCreationTestCaseTest() {
 
         step("Авторизация", () -> cookieAuth.authWithCookie()
@@ -32,6 +39,7 @@ public class TestCasesTests extends TestBase {
 
     @DisplayName("Проверка редактирования имени тест-кейса")
     @Test
+    @Severity(SeverityLevel.CRITICAL)
     void editTestCaseTest() {
 
         step("Авторизация", () -> cookieAuth.authWithCookie()
@@ -51,6 +59,7 @@ public class TestCasesTests extends TestBase {
 
     @DisplayName("Проверка создания шагов тест-кейса")
     @Test
+    @Severity(SeverityLevel.NORMAL)
     void verifyCreationStepsTest() {
         step("Авторизация", () -> cookieAuth.authWithCookie()
                 .openTestCaseUrl());
@@ -63,6 +72,7 @@ public class TestCasesTests extends TestBase {
     @DisplayName("Проверка добавления аттача к шагам")
     @ValueSource(strings = {"Attached First", "Attached Second"})
     @ParameterizedTest(name = "{0}")
+    @Severity(SeverityLevel.NORMAL)
     void editStepsAttachTest(String attached) {
 
         step("Авторизация", () -> cookieAuth.authWithCookie()
