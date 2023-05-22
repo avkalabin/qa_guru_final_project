@@ -9,8 +9,8 @@ import static java.lang.String.format;
 public class CookieAuth {
 
     final static public String PROJECT_ID = "2264",
-            X_XSRF_TOKEN = 	"4f04f83f-0c4b-4be0-adff-67dc811b03b2",
-            ALLURE_TESTOPS_SESSION = "bff4b144-d88d-4f04-8f38-bbbbb5e15148";
+            X_XSRF_TOKEN = 	"2f9220e0-3075-4c58-ac9d-6078fab166fe",
+            ALLURE_TESTOPS_SESSION = "918bcf23-bca0-4c73-b40d-fd9bcc74c9d6";
 
     public CookieAuth authWithCookie() {
         open("/favicon.ico");
