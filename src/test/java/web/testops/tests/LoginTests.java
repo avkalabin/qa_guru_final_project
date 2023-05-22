@@ -10,6 +10,7 @@ import web.testops.pages.LoginPage;
 
 import static io.qameta.allure.Allure.step;
 
+@DisplayName("Авторизация пользователя")
 @Owner("avkalabin")
 @Feature("UI тесты allure.autotests.cloud")
 @Story("Авторизация пользователя")

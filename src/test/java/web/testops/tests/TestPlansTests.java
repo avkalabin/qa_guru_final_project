@@ -10,10 +10,11 @@ import web.testops.pages.TestPlansPage;
 
 import static io.qameta.allure.Allure.step;
 
+@DisplayName("Создание/удаление тест планов")
 @TestMethodOrder(OrderAnnotation.class)
 @Owner("avkalabin")
 @Feature("UI тесты allure.autotests.cloud")
-@Story("Работа с тест кейсами")
+@Story("Создание/удаление тест планов")
 @Tag("web")
 public class TestPlansTests extends TestBase {
 

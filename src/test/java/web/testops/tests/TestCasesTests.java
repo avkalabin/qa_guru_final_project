@@ -14,6 +14,7 @@ import web.testops.pages.TestCasesPage;
 import static io.qameta.allure.Allure.step;
 import static web.testops.helpers.TestCaseLifecycleExtension.testCaseName;
 
+@DisplayName("Работа с тест кейсами")
 @Owner("avkalabin")
 @Feature("UI тесты allure.autotests.cloud")
 @Story("Работа с тест кейсами")
