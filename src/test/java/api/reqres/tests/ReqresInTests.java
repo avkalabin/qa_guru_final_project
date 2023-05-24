@@ -16,9 +16,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@DisplayName("Тестирование API сервиса https://reqres.in/")
+@DisplayName("Тестирование API сервиса reqres.in")
 @Owner("avkalabin")
-@Feature("API тесты https://reqres.in/")
+@Feature("API тесты reqres.in")
 @Story("ReqresIn")
 @Tag("api")
 public class ReqresInTests {
@@ -95,7 +95,7 @@ public class ReqresInTests {
         user.setFirstName("morpheus");
         user.setJob("zion resident");
 
-            User responseUser = step("Make request to update user", () ->
+        User responseUser = step("Make request to update user", () ->
                 given(requestSpec)
                         .body(user)
                         .when()
@@ -144,7 +144,6 @@ public class ReqresInTests {
                         .statusCode(200)
                         .extract().as(User.class));
 
-
         step("Verify response", () -> {
             assertThat(responseUser.getToken()).isEqualTo("QpwL5tke4Pnpja7X4");
             assertThat(responseUser.getId()).isEqualTo(4);
@@ -155,15 +154,18 @@ public class ReqresInTests {
     @DisplayName("Проверка id и email пользователя")
     @Severity(SeverityLevel.MINOR)
     void checkIdAndEmailOfFeaturedUser() {
-        User userResponse = given().spec(requestSpec)
-                .when()
-                .pathParam("id", "2")
-                .get("/users/{id}")
-                .then()
-                .spec(responseSpec)
-                .extract().jsonPath().getObject("data", User.class);
+        User userResponse = step("Make request to get User Data", () ->
+                given().spec(requestSpec)
+                        .when()
+                        .pathParam("id", "2")
+                        .get("/users/{id}")
+                        .then()
+                        .spec(responseSpec)
+                        .extract().jsonPath().getObject("data", User.class));
 
-        assertEquals(2, userResponse.getId());
-        assertTrue(userResponse.getEmail().endsWith("@reqres.in"));
+        step("Verify user id and email is correct", () -> {
+            assertEquals(2, userResponse.getId());
+            assertTrue(userResponse.getEmail().endsWith("@reqres.in"));
+        });
     }
 }
