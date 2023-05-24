@@ -16,7 +16,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@DisplayName("API тесты https://reqres.in/")
+@DisplayName("Тестирование API сервиса https://reqres.in/")
 @Owner("avkalabin")
 @Feature("API тесты https://reqres.in/")
 @Story("ReqresIn")
