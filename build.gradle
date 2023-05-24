@@ -44,9 +44,17 @@ dependencies {
     )
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 tasks.withType(Test) {
-    useJUnitPlatform()
     systemProperties(System.getProperties())
+    useJUnitPlatform {
+        if (System.getProperty("tag") != null && !System.getProperty("tag").isEmpty()) {
+            includeTags System.getProperty("tag")
+        }
+    }
 
     if (System.getProperty("threads") != null) {
         systemProperties += [
