@@ -1,4 +1,4 @@
-# Дипломный проект по автоматизации тестирования web, api и mobile платформ
+# Дипломный проект по автоматизации тестирования web и api платформ
 
 ## :open_book: Содержание:
 
@@ -22,6 +22,7 @@
 <a href="https://gradle.org/"><img src="media/logo/Gradle.svg" width="50" height="50" alt="Gradle" title="Gradle"/></a>
 <a href="https://selenide.org/"><img src="media/logo/Selenide.svg" width="50" height="50" alt="Selenide" title="Selenide"/></a>
 <a href="https://aerokube.com/selenoid/"><img src="media/logo/Selenoid.svg" width="50" height="50" alt="Selenoid" title="Selenoid"/></a>
+<a href="https://aerokube.com/selenoid/"><img src="media/logo/Rest_Assured.png" width="50" height="50" alt="Selenoid" title="Selenoid"/></a>
 <a href="https://github.com/allure-framework/allure2"><img src="media/logo/Allure_Report.svg" width="50" height="50" alt="Allure" title="Allure"/></a>
 <a href="https://www.jenkins.io/"><img src="media/logo/Jenkins.svg" width="50" height="50" alt="Jenkins" title="Jenkins"/></a>
 <a href="https://web.telegram.org/"><img src="media\logo\Telegram.svg" width="50" height="50" alt="Telegram" title="Telegram"></a>
@@ -30,23 +31,56 @@
 
 В данном проекте автотесты написаны на **Java** с использованием фреймворка для тестирования **Selenide**. Для сборки проекта в среде **IntelliJ IDEA** используется **Gradle**.
 **JUnit5** задействован в качестве фреймворка модульного тестирования. Запуск тестов выполняется из **Jenkins**. **Selenoid** используется для запуска браузеров в контейнерах **Docker**.
+Тестирование API выполняется с помощью библиотеки **Rest Assured**.
 
 **Allure Report**, **AllureTestOps** и **Telegram Bot** используются для визуализации результатов тестирования.
 
-## :heavy_check_mark: Тест кейсы
+## :heavy_check_mark: Тест кейсы UI для платформы "allure.autotests.cloud"
 
-- Проверка элементов главного меню
-- В перечне технологий содержится ссылка на "1С-Битрикс"
-- Форма "Свяжитесь с нами" имеет обязательные поля
-- Адрес московоского офиса указан корректно
-- В разделе "Карьера" указана возможность удаленной работы
-- Допустимый раздел прикрепляемого CV не более 3Mb
-- Форма расчет стоимости проекта работоспособна
+- Проверка создания шагов тест-кейса
+- Проверка редактирования имени тест-кейса
+- Проверка имени созданного тест-кейса
+- Проверка добавления аттача к шагам (параметризированный тест)
+- Проверка авторизации пользователя
+- Проверка создания тест плана
+- Проверка удаления тест плана
+
+Создание/удаление тест-кейсов перед каждым тестом, а так же авторизация выполняется с помощью API.
+
+## :heavy_check_mark: Тест кейсы API для сервиса "reqres.in"
+
+- Проверка успешного логина
+- Проверка наличия Michael Lawson в списке пользователей
+- Проверка создания пользователя
+- Проверка обновления данных пользователя
+- Проверка статус кода при удалении пользователя
+- Проверка успешной регистрации
+- Проверка id и email пользователя
 
 ## :computer: Запуск тестов из терминала
 
+### :house_with_garden:	Локальный запуск тестов
+
 ```bash
-gradle clean test -Dselenoid_url="selenoid.autotests.cloud/wd/hub" -Dbrowser_size="1920х1080" -Dbrowser="chrome" -Dbrowser_version="100.0"
+gradle clean test
+```
+
+### :earth_asia: Удаленный запуск тестов
+
+```bash
+gradle clean
+test
+-Dselenoid_url="${SELENOID_URL}"
+-Dbrowser_size="${BROWSER_SIZE}"
+-Dbrowser="${BROWSER}"
+-Dbrowser_version="${BROWSER_VERSION}"
+-Dtag=${TAG}
+```
+
+
+### :key: Логин, пароль и токен извлекаются из соответствующего файла конфигурации:
+```bash
+./resources/credentials.properties
 ```
 ## <img width="4%" title="Jenkins" src="media/logo/Jenkins.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/015_aziyatdinov_final_ui/)
 Для запуска сборки необходимо перейти в раздел <code><strong>*Собрать с параметрами*</strong></code> и нажать кнопку <code><strong>*Собрать*</strong></code>.
