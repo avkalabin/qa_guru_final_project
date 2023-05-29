@@ -78,11 +78,11 @@ test
 ```
 
 
-### :key: Логин, пароль и токен извлекаются из соответствующего файла конфигурации:
+### :key: Логин, пароль и токен извлекаются из файла конфигурации:
 ```bash
 ./resources/credentials.properties
 ```
-## <img width="4%" title="Jenkins" src="media/logo/Jenkins.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/015_aziyatdinov_final_ui/)
+## <img width="4%" title="Jenkins" src="media/logo/Jenkins.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/018-avkalabin-final_project//)
 Для запуска сборки необходимо перейти в раздел <code><strong>*Собрать с параметрами*</strong></code> и нажать кнопку <code><strong>*Собрать*</strong></code>.
 
 <p align="center">
@@ -92,7 +92,7 @@ test
 После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки появится
 значок *Allure Report* и *Allure TestOps* кликнув по которому, откроется страница с сформированным html-отчетом и тестовой документацией.
 
-## <img width="4%" title="Allure Report" src="media/logo/Allure_Report.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/018-avkalabin-lesson15/12/allure/)
+## <img width="4%" title="Allure Report" src="media/logo/Allure_Report.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/018-avkalabin-final_project/38/allure/)
 
 <p align="center">
   <img src="media/screen/jenkins_overview.png" alt="allure-report" width="900">
@@ -107,7 +107,7 @@ test
 ### Основной дашборд
 
 <p align="center">
-  <img src="media/screen/allure-dashboard.PNG" alt="dashboard" width="900">
+  <img src="media/screen/allure-dashboard.png" alt="dashboard" width="900">
 </p>
 
 ### Список тестов с результатами прогона
