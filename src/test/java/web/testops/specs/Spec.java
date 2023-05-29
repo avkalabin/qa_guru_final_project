@@ -3,6 +3,7 @@ package web.testops.specs;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import web.testops.authorization.AuthorizationApi;
 
 import static web.testops.helpers.CookieAuth.*;
 import static web.testops.helpers.CustomAllureListener.withCustomTemplates;
@@ -15,9 +16,7 @@ public class Spec {
     public static RequestSpecification requestSpec = with()
             .filter(withCustomTemplates())
             .log().all()
-            .header("X-XSRF-TOKEN", X_XSRF_TOKEN)
-            .cookies("XSRF-TOKEN", X_XSRF_TOKEN,
-                    "ALLURE_TESTOPS_SESSION", ALLURE_TESTOPS_SESSION)
+            .header("Authorization", "Bearer " + AuthorizationApi.getAuthorization().getAccessToken())
             .queryParam("projectId", PROJECT_ID)
             .contentType("application/json;charset=UTF-8");
 
