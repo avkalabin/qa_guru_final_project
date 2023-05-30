@@ -102,7 +102,7 @@ test
   <img src="media/screen/jenkins_behaviors.png" alt="allure-report_1" width="900">
 </p>
 
-## <img width="4%" title="Allure TestOPS" src="media/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/2194/dashboards)
+## <img width="4%" title="Allure TestOPS" src="media/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/2284/dashboards)
 
 ### Основной дашборд
 
@@ -126,12 +126,12 @@ test
 После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне тестов.
 
 <p align="center">
-<img title="Telegram Notifications" src="media/screen/telegram-notification.PNG">
+<img title="Telegram Notifications" src="media/screen/telegram-notification.png">
 
 ## :movie_camera: Видео с прогоном тестов
 
 В отчетах Allure для каждого теста прикреплен не только скриншот, но и видео прохождения теста
 
 <p align="center">
-  <img title="Video" src="media/video/aston-tests.gif">
+  <img title="Video" src="media/video/final-project.gif">
 </p>
