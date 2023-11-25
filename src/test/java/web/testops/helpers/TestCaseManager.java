@@ -9,6 +9,7 @@ import java.util.List;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static java.lang.String.format;
+import static web.testops.helpers.CookieAuth.PROJECT_ID;
 import static web.testops.specs.Spec.requestSpec;
 import static web.testops.specs.Spec.responseSpec;
 
@@ -66,7 +67,7 @@ public class TestCaseManager {
         selection.setInverted(false);
         selection.setLeafsInclude(new int[]{testCaseId});
         selection.setKind("TreeSelectionDto");
-        selection.setProjectId(2264);
+        selection.setProjectId(Integer.parseInt(PROJECT_ID));
         deleteStepCaseBody.setSelection(selection);
 
         step("Удаление тест-кейса", () -> given(requestSpec)

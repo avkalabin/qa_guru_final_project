@@ -9,7 +9,7 @@ import static java.lang.String.format;
 
 public class CookieAuth {
 
-    final static public String PROJECT_ID = "2264";
+    final static public String PROJECT_ID = "2261";
 
     public CookieAuth authWithCookie() {
         open("/favicon.ico");
